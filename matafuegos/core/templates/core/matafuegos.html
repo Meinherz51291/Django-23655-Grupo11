@@ -1,56 +1,55 @@
-{% extends "core/main.html" %}
+{% extends "core/base.html" %}
 {% block section_title %}Gestión de Recargas de Matafuegos{% endblock %}
 {% block content %}
 
-    <div class="container mt-5">
-        
-        
-        <div class="card mt-4">
-            <div class="card-header">
-                Agregar Nueva Recarga
-            </div>
-            <div class="card-body">
-                <form>
-                    <div class="form-group">
-                        <label for="fecha_recarga">Fecha de Recarga</label>
-                        <input type="date" class="form-control" id="fecha_recarga">
-                    </div>
-                    <div class="form-group">
-                        <label for="fecha_vencimiento">Fecha de Vencimiento</label>
-                        <input type="date" class="form-control" id="fecha_vencimiento">
-                    </div>
-                
-                    <button type="submit" class="btn btn-primary">Guardar Recarga</button>
-                </form>
-            </div>
+<div class="container mt-5">
+    <div class="card mt-4">
+        <div class="card-header">
+            Agregar Nueva Recarga
         </div>
-
-        <div class="card mt-4">
-            <div class="card-header">
-                Recargas Existentes
-            </div>
-            <div class="card-body">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Fecha de Recarga</th>
-                            <th>Fecha de Vencimiento</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    
-                        {% for recarga in recargas %}
-                            <tr>
-                                <td>{{ recarga.fecha_recarga }}</td>
-                                <td>{{ recarga.fecha_vencimiento }}</td>
-                             
-                            </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div>
+        <div class="card-body">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="fecha_recarga">Fecha de Recarga</label>
+                    <input type="date" class="form-control" id="fecha_recarga" name="fecha_recarga">
+                </div>
+                <div class="form-group">
+                    <label for="fecha_vencimiento">Fecha de Vencimiento</label>
+                    <input type="date" class="form-control" id="fecha_vencimiento" name="fecha_vencimiento">
+                </div>
+                <div class="form-group">
+                    <label for="id_cliente">ID Cliente</label>
+                    <input type="text" class="form-control" id="id_cliente" name="id_cliente">
+                </div>
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre">
+                </div>
+                <div class="form-group">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" class="form-control" id="apellido" name="apellido">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="celular">Celular</label>
+                    <input type="tel" class="form-control" id="celular" name="celular">
+                </div>
+                <div class="form-group">
+                    <label for="cliente_activo">Cliente Activo</label>
+                    <input type="checkbox" class="form-check-input" id="cliente_activo" name="cliente_activo">
+                </div>
+                <button type="submit" class="btn btn-primary">Guardar Recarga</button>
+            </form>
         </div>
     </div>
+
+   
+</div>
+
 
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
