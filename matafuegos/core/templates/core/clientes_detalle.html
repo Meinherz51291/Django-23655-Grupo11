@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block section_title %}
+    Detalle del Cliente
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1>Detalle del Cliente</h1>
+        <p>ID Cliente: {{ cliente.id_cliente }}</p>
+        <p>Nombre: {{ cliente.nombre }}</p>
+        <p>Apellido: {{ cliente.apellido }}</p>
+        <p>Email: {{ cliente.email }}</p>
+        <p>Celular: {{ cliente.celular }}</p>
+        <p>Cliente Activo: {% if cliente.cliente_activo %}Sí{% else %}No{% endif %}</p>
+    </div>
+{% endblock %}
+
+
+
+
+

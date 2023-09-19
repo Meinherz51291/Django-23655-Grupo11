@@ -50,9 +50,22 @@ def clientes_listado(request):
     return render(request, 'core/clientes.html', context)
 
 def clientes_detalle(request, id_cliente):
-    return HttpResponse(
-        f"""
-        <h1> Cliente ID:  {id_cliente} </h1>
-        """
-)
+    
+    clientes = [
+       
+    ]
+
+    
+    cliente = None
+    for c in clientes:
+        if c["id_cliente"] == id_cliente:
+            cliente = c
+            break
+
+    if cliente:
+        context = {"cliente": cliente}
+        return render(request, 'core/clientes_detalle.html', context)
+    else:
+        
+        return HttpResponse("Cliente no encontrado", status=404)
 
