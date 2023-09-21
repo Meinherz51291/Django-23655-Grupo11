@@ -11,6 +11,9 @@ def matafuegos(request):
 def estadisticas(request):
     return render(request, 'core/estadisticas.html')
 
+def stock (request):
+    return render(request, 'core/stock.html')
+
 
 def clientes_listado(request):
     context ={
