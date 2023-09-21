@@ -8,8 +8,15 @@
             Agregar Nueva Recarga
         </div>
         <div class="card-body">
-            <form method="POST">
-                {% csrf_token %}
+            <form >
+                <div class="form-group">
+                    <label for="id_cliente">Orden de Pedido</label>
+                    <input type="text" class="form-control" id="id_cliente" name="id_cliente">
+                </div>  <div class="form-group">
+                    <label for="id_cliente">ID Cliente</label>
+                    <input type="text" class="form-control" id="id_cliente" name="id_cliente">
+                </div>
+
                 <div class="form-group">
                     <label for="fecha_recarga">Fecha de Recarga</label>
                     <input type="date" class="form-control" id="fecha_recarga" name="fecha_recarga">
@@ -18,10 +25,7 @@
                     <label for="fecha_vencimiento">Fecha de Vencimiento</label>
                     <input type="date" class="form-control" id="fecha_vencimiento" name="fecha_vencimiento">
                 </div>
-                <div class="form-group">
-                    <label for="id_cliente">ID Cliente</label>
-                    <input type="text" class="form-control" id="id_cliente" name="id_cliente">
-                </div>
+              
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
                     <input type="text" class="form-control" id="nombre" name="nombre">
@@ -38,10 +42,37 @@
                     <label for="celular">Celular</label>
                     <input type="tel" class="form-control" id="celular" name="celular">
                 </div>
-                <div class="form-group">
-                    <label for="cliente_activo">Cliente Activo</label>
-                    <input type="checkbox" class="form-check-input" id="cliente_activo" name="cliente_activo">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="cantidad_matafuegos">Cantidad de Matafuegos</label>
+                            <input type="number" class="form-control" id="cantidad_matafuegos" name="cantidad_matafuegos" min="0" max="1000" value="1">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="tipo_matafuego">Tipo de Matafuego</label>
+                            <select class="form-control" id="tipo_matafuego" name="tipo_matafuego">
+                                <option value="1kg">1kg</option>
+                                <option value="2.5kg">2.5kg</option>
+                                <option value="5kg">5kg</option>
+                                <option value="10kg">10kg</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
+                
+              
+                <div class="form-group">
+                    <button type="button" class="btn btn-success" id="agregar_matafuego">Agregar Matafuego</button>
+                </div>
+
+
+            
+                <div class="form-group">
+                    <ul id="lista_matafuegos"></ul>
+                </div>
+                
                 <button type="submit" class="btn btn-primary">Guardar Recarga</button>
             </form>
         </div>

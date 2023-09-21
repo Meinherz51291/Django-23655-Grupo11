@@ -8,6 +8,9 @@ def index(request):
 def matafuegos(request):
     return render(request, 'core/matafuegos.html')
 
+def estadisticas(request):
+    return render(request, 'core/estadisticas.html')
+
 
 def clientes_listado(request):
     context ={
