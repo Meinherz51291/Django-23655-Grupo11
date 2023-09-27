@@ -1,11 +1,12 @@
 {% extends "core/base.html" %}
-{% block section_title %}Gestión de Recargas de Matafuegos{% endblock %}
+{% block section_title %}Orden de Recarga
+{% endblock %}
 {% block content %}
 
 <div class="container mt-5">
     <div class="card mt-4">
         <div class="card-header">
-            Agregar Nueva Recarga
+           Nueva Orden de Recarga
         </div>
         <div class="card-body">
             <form >
@@ -16,24 +17,12 @@
                     <label for="id_cliente">ID Cliente</label>
                     <input type="text" class="form-control" id="id_cliente" name="id_cliente">
                 </div>
-
-                <div class="form-group">
-                    <label for="fecha_recarga">Fecha de Recarga</label>
-                    <input type="date" class="form-control" id="fecha_recarga" name="fecha_recarga">
-                </div>
-                <div class="form-group">
-                    <label for="fecha_vencimiento">Fecha de Vencimiento</label>
-                    <input type="date" class="form-control" id="fecha_vencimiento" name="fecha_vencimiento">
-                </div>
               
                 <div class="form-group">
-                    <label for="nombre">Nombre</label>
+                    <label for="nombre">Nombre / Razon Social</label>
                     <input type="text" class="form-control" id="nombre" name="nombre">
                 </div>
-                <div class="form-group">
-                    <label for="apellido">Apellido</label>
-                    <input type="text" class="form-control" id="apellido" name="apellido">
-                </div>
+           
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" class="form-control" id="email" name="email">
@@ -73,7 +62,7 @@
                     <ul id="lista_matafuegos"></ul>
                 </div>
                 
-                <button type="submit" class="btn btn-primary">Guardar Recarga</button>
+                <button type="submit" class="btn btn-primary">Procesar Recarga</button>
             </form>
         </div>
     </div>

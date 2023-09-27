@@ -8,21 +8,21 @@
                 <tr>
                     <th>ID Cliente</th>
                     <th>Nombre</th>
-                    <th>Apellido</th>
                     <th>Email</th>
                     <th>Celular</th>
-                    <th>Cliente Activo</th>
+                 
                 </tr>
             </thead>
             <tbody>
                 {% for cliente in clientes %}
                     <tr>
+                        
                         <td>{{ cliente.id_cliente }}</td>
                         <td>{{ cliente.nombre }}</td>
-                        <td>{{ cliente.apellido }}</td>
                         <td>{{ cliente.email }}</td>
                         <td>{{ cliente.celular }}</td>
-                        <td>{% if cliente.cliente_activo %}Sí{% else %}No{% endif %}</td>
+                     
+                     
                     </tr>
                 {% endfor %}
             </tbody>

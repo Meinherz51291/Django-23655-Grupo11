@@ -1,5 +1,64 @@
 {% extends "core/base.html" %}
-{% block section_title %} Estadisticas de Clientes{% endblock %}
+{% block section_title %}Estadísticas{% endblock %}
 {% block content %}
-   
+
+<div class="container mt-5">
+ 
+
+    <ul class="list-group mt-4">
+        <li class="list-group-item">
+        <a class="nav-link" href="{% url 'ordenes'%}"><h5>Órdenes Pendientes de Retiro</h5></a>
+            <p>{{ ordenes_pendientes }}</p>
+        </li>
+        <li class="list-group-item">
+            <h5>Clientes con Recargas a vencer</h5>
+        </li>
+
+        <li class="list-group-item">
+            <h5>Grandes Clientes</h5>
+            <ul>
+                {% for cliente in grandes_clientes %}
+                <li>{{ cliente }}</li>
+                {% endfor %}
+            </ul>
+        </li>
+
+        <li class="list-group-item">
+            <h5>Clientes Particulares</h5>
+            <ul>
+                {% for cliente in clientes_particulares %}
+                <li>{{ cliente }}</li>
+                {% endfor %}
+            </ul>
+        </li>
+
+        <li class="list-group-item">
+            <h5>Mejores Clientes</h5>
+            <ul>
+                {% for cliente in mejores_clientes %}
+                <li>{{ cliente }}</li>
+                {% endfor %}
+            </ul>
+        </li>
+
+        <li class="list-group-item">
+            <h5>Mejor Mes de Venta</h5>
+            <p>{{ mejor_mes_venta }}</p>
+        </li>
+
+        <li class="list-group-item">
+            <h5>Órdenes Procesadas</h5>
+            <p>{{ ordenes_procesadas }}</p>
+        </li>
+
+        <li class="list-group-item">
+            <h5>Órdenes Procesadas en el Mes Actual</h5>
+            <p>{{ ordenes_ejecutadas_mes_actual }}</p>
+        </li>
+
+     
+        
+    </ul>
+</div>
+
 {% endblock %}
