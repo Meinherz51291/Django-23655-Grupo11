@@ -16,7 +16,7 @@ Detalle Orden  {{ orden_pedido.id_pedido }}
     <p>Cantidad de Matafuegos: {{ orden_pedido.cantidad_matafuegos }}</p>
     <p>Tipo de Matafuego: {{ orden_pedido.tipo_matafuego }}</p>
     <p><div>
-        {% if cliente.orden_procesada %}
+        {% if orden_pedido.orden_procesada %}
         <p>Estado de la Orden: Orden Archivada</p>
         {% else %}
         <p>Estado de la Orden: En Proceso</p>
