@@ -1,7 +1,7 @@
 {% extends "core/base.html" %}
 
 {% block section_title %}
-    Detalle Orden
+Detalle Orden  {{ orden_pedido.id_pedido }}
 {% endblock %}
 
 {% block content %}
@@ -9,11 +9,19 @@
     
     
     <p>Número de Orden de Pedido: {{ orden_pedido.id_pedido }}</p>
-    <p>Cliente ID: {{ orden_pedido.cliente_id }}</p>
+    <p>Cliente: {{orden_pedido.nombre }}  (ID: {{orden_pedido.id_cliente }})</p>
     <p>Email: {{ orden_pedido.email }}</p>
     <p>Fecha de Recarga: {{ orden_pedido.fecha_recarga }}</p>
     <p>Fecha de Vencimiento: {{ orden_pedido.fecha_vencimiento }}</p>
     <p>Cantidad de Matafuegos: {{ orden_pedido.cantidad_matafuegos }}</p>
     <p>Tipo de Matafuego: {{ orden_pedido.tipo_matafuego }}</p>
+    <p><div>
+        {% if cliente.orden_procesada %}
+        <p>Estado de la Orden: Orden Archivada</p>
+        {% else %}
+        <p>Estado de la Orden: En Proceso</p>
+         {% endif %}
+</div></p>
+
 </div>
 {% endblock %}

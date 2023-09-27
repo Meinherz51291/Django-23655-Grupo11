@@ -289,8 +289,8 @@ def orden_detalle(request, id_pedido):
             break
 
     if orden_pedido:
-        # Aquí puedes agregar la lógica necesaria para obtener datos adicionales si es necesario
+      
         context = {"orden_pedido": orden_pedido}
-        return render(request, 'core/detalle_orden.html', context)
+        return render(request, 'core/orden_detalle.html', context)
     else:
          return HttpResponse("Orden de Pedido no encontrado", status=404)
