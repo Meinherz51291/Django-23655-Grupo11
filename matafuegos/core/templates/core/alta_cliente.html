@@ -1,0 +1,14 @@
+{% extends "core/base.html" %}
+
+{% block section_title %}Agregar Cliente{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h2>Datos a cargar para nuevos clientes</h2>
+        <form method="post" action="{% url 'alta_cliente' %}"> 
+            {% csrf_token %}
+            {{ alta_cliente.as_p }}
+            <button type="submit" class="btn btn-primary">Guardar Cliente</button>
+        </form>
+    </div>
+{% endblock %}

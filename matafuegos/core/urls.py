@@ -12,5 +12,6 @@ urlpatterns = [
     path('remito/', views.remito, name='remito'),  
     path('clientes/', views.clientes_listado , name='clientes'),
     path('clientes/detalle/<str:id_cliente>/', views.clientes_detalle, name='clientes_detalle'),
+    path('alta_cliente/', views.alta_cliente, name='alta_cliente'),
     
     ] 

@@ -1,6 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.urls import reverse
 from datetime import datetime
+from .forms import AltaForms
 
 def index(request):
     return render(request, "core/index.html")
@@ -274,11 +276,6 @@ def ordenes(request):
     }
     return render(request, 'core/ordenes.html', context)
 
-def a (request, id_pedido):
-    cliente = get_object_or_404(id_pedido, id_cliente=id_pedido)
-    
-    context = {"cliente": cliente}
-    return render(request, 'core/detalle_orden.html', context)
 
     
 def orden_detalle(request, id_pedido):
@@ -294,3 +291,25 @@ def orden_detalle(request, id_pedido):
         return render(request, 'core/orden_detalle.html', context)
     else:
          return HttpResponse("Orden de Pedido no encontrado", status=404)
+    
+
+
+
+def alta_cliente(request):
+    if request.method == 'POST':
+        # Instanciamos un dato con valores
+        formulario = AltaForms(request.POST)
+        # Validamos
+        if formulario.is_valid():
+            # Aquí deberías guardar el cliente en la base de datos
+            # Por ejemplo, si tienes un modelo Cliente:
+            # cliente = formulario.save()
+            # Luego puedes redirigir a la página de detalles del cliente o a donde desees
+            return redirect(reverse('orden_pedido'))
+    else:
+        formulario = AltaForms()
+
+    context = {
+        'alta_cliente': formulario
+    }
+    return render(request, 'core/alta_cliente.html', context)
