@@ -1,0 +1,35 @@
+{% extends "core/base.html" %}
+
+{% block section_title %}
+    Ordenes Activas
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Número de Orden</th>
+                <th>Cliente</th>
+                <th>Teléfono</th>
+                <th>Cantidad de Matafuegos</th>
+                <th>Tipo de Matafuego</th>
+                <th>Días Corridos</th> 
+            </tr>
+        </thead>
+        <tbody>
+            {% for cliente in clientes_activos %}
+                <tr>
+                    <td>{{ cliente.id_pedido }}</td>
+                    <td>{{ cliente.nombre }} {{ cliente.apellido }}</td>
+                    <td>{{ cliente.celular }}</td>
+                    <td>{{ cliente.cantidad_matafuegos }}</td>
+                    <td>{{ cliente.tipo_matafuego }}</td>
+                    <td>{{ cliente.dias_corridos }}</td>  
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

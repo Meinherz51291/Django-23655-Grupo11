@@ -1,0 +1,25 @@
+{% extends "core/base.html" %}
+
+{% block section_title %}
+    Ordenes Archivadas
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    
+    <p>Orden de Pedido: {{ cliente.orden_pedido }}</p>
+    <p>ID Cliente: {{ cliente.id_cliente }}</p>
+    <p>Nombre: {{ cliente.nombre }}</p>
+    <p>Email: {{ cliente.email }}</p>
+    <p>Celular: {{ cliente.celular }}</p>
+    <p>Fecha de Recarga: {{ cliente.fecha_recarga }}</p>
+    <p>Fecha de Vencimiento: {{ cliente.fecha_vencimiento }}</p>
+    <p>Cantidad de Matafuegos: {{ cliente.cantidad_matafuegos }}</p>
+    <p>Tipo de Matafuego: {{ cliente.tipo_matafuego }}</p>
+</div>
+{% endblock %}
+
+
+
+
+
